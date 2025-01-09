@@ -48,12 +48,18 @@ let priceBase = 0.21;
 
 // }
 if (eta < 18) {
-    let priceDiscount = (kmPercorsi * priceBase) - 20 / 100;
-    console.log(priceDiscount)
-} else if (eta >= 65) {
-    priceDiscount = (kmPercorsi * priceBase) - 40 / 100;
-    console.log(priceDiscount)
-} else {
 
-    console.log(kmPercorsi * priceBase)
+    let priceDiscount = (kmPercorsi * priceBase) - 20 / 100;
+    console.log(priceDiscount.toFixed(2))
+
+} else if (eta >= 65) {
+
+    priceDiscount = (kmPercorsi * priceBase) - 40 / 100;
+    console.log(priceDiscount.toFixed(2))
+
+} else {
+    
+    let price = kmPercorsi * priceBase
+    
+    console.log(price.toFixed(2))
 }
