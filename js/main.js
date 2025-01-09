@@ -28,9 +28,9 @@
 
 
 
-let eta = prompt("Inserisci la tua eta")
+let eta = parseInt(prompt("Inserisci la tua eta"))
 
-let kmPercorsi= prompt("Quanti km devi percorrere?")
+let kmPercorsi= parseFloat(prompt("Quanti km devi percorrere?"))
 
 let priceBase = 0.21;
 const scontoGiovani = 0.20;
@@ -48,19 +48,28 @@ const scontoAnziani = 0.40;
 
 
 // }
-if (eta < 18) {
+let finalPrice;
 
-    let priceDiscount = (kmPercorsi * priceBase) * scontoGiovani;
-    console.log("Il prezzo del tuo biglietto è di ",priceDiscount.toFixed(2))
+let price = kmPercorsi * priceBase
+let priceDiscount 
+
+if (eta < 18) {
+    
+    priceDiscount = price * scontoGiovani;
+    
+    finalPrice = price - priceDiscount
+    
+    console.log("Il prezzo del tuo biglietto è di ",finalPrice.toFixed(2))
 
 } else if (eta >= 65) {
 
-    priceDiscount = (kmPercorsi * priceBase) * scontoAnziani;
-    console.log("Il prezzo del tuo biglietto è di ",priceDiscount.toFixed(2))
+    priceDiscount = price * scontoAnziani;
+    
+    finalPrice= price - priceDiscount
+
+    console.log("Il prezzo del tuo biglietto è di ",finalPrice.toFixed(2))
 
 } else {
-
-    let price = kmPercorsi * priceBase
     
     console.log("Il prezzo del tuo biglietto è di ",price.toFixed(2))
     
