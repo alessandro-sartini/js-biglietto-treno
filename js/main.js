@@ -33,7 +33,8 @@ let eta = prompt("Inserisci la tua eta")
 let kmPercorsi= prompt("Quanti km devi percorrere?")
 
 let priceBase = 0.21;
-
+const scontoGiovani = 0.20;
+const scontoAnziani = 0.40;
 
 // if (eta>17 && eta < 65) {
     
@@ -49,12 +50,12 @@ let priceBase = 0.21;
 // }
 if (eta < 18) {
 
-    let priceDiscount = (kmPercorsi * priceBase) - 20 / 100;
+    let priceDiscount = (kmPercorsi * priceBase) * scontoGiovani;
     console.log("Il prezzo del tuo biglietto è di ",priceDiscount.toFixed(2))
 
 } else if (eta >= 65) {
 
-    priceDiscount = (kmPercorsi * priceBase) - 40 / 100;
+    priceDiscount = (kmPercorsi * priceBase) * scontoAnziani;
     console.log("Il prezzo del tuo biglietto è di ",priceDiscount.toFixed(2))
 
 } else {
@@ -62,4 +63,5 @@ if (eta < 18) {
     let price = kmPercorsi * priceBase
     
     console.log("Il prezzo del tuo biglietto è di ",price.toFixed(2))
+    
 }
